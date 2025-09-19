@@ -29,3 +29,8 @@ jobs:
       run: |
         cd build
         ctest --output-on-failure
+
+    - name: Check CMakeLists.txt exists
+      run: |
+        ls -la
+        cat CMakeLists.txt || echo "CMakeLists.txt not found"
