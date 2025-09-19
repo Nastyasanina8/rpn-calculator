@@ -66,6 +66,13 @@ double evaluate_rpn(const std::string& expression) {
                     throw std::invalid_argument("Division by zero");
                 }
                 result = a / b;
+            }
+            else if (token == "%"){
+                int x = a,y = b;
+                if (y == 0) {
+                    throw std::invalid_argument("Division by zero");
+                }
+                result = x % y;
             } else if (token == "^") {
                 result = std::pow(a, b);
             } else {
